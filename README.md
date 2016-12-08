@@ -1,2 +1,1 @@
-# vuejs-examples
-Vue.js examples
+# Vue.js Examples
