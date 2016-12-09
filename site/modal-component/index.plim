@@ -1,0 +1,12 @@
+-inherit /_vue.plim
+
+-block title
+  Bootstrap Modal Component
+
+h1 = title()
+
+#app
+  p
+    Message: {{ message }}
+
+  button.btn.btn-primary @click='open' Open modal
