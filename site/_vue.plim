@@ -1,8 +1,5 @@
 -inherit _base.plim
 
--block headlibs
-  script src='https://unpkg.com/vue/dist/vue.js'
-  script src='https://unpkg.com/vuex/dist/vuex'
-  script src='https://unpkg.com/vue-router/dist/vue-router'
+h1 = next.title()
 
 = next.body()

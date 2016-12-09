@@ -5,7 +5,7 @@ const app = new Vue({
   el: '#app',
   components: { Modal },
   data: {
-    message: 'Hello World'
+    port: '22311'
   },
   methods: {
     open() {

@@ -7,12 +7,10 @@
   script src="/__build__/shared.js"
   script src='/__build__/modal-component.js'
 
-h1 = title()
-
 #app
   p
-    Message: {{ message }}
+    Local port: {{ port }}
 
   modal#local-port-modal
 
-  button.btn.btn-primary(data-toggle='modal', data-target='#local-port-modal') Open modal
+  button.btn.btn-primary data-toggle='modal' data-target='#local-port-modal' Open modal
