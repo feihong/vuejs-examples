@@ -13,4 +13,6 @@ h1 = title()
   p
     Message: {{ message }}
 
-  button.btn.btn-primary @click='open' Open modal
+  modal#local-port-modal
+
+  button.btn.btn-primary(data-toggle='modal', data-target='#local-port-modal') Open modal
