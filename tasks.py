@@ -62,6 +62,11 @@ def build(ctx):
 
 
 @task
+def build_js(ctx):
+    ctx.run('webpack --progress --colors')
+
+
+@task
 def clean(ctx):
     if Path('build').is_dir():
         ctx.run('rm -rf build/*')

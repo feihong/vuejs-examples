@@ -6,6 +6,3 @@
   script src='https://unpkg.com/vue-router/dist/vue-router'
 
 = next.body()
-
--block extrascript
-  script src='main.js'

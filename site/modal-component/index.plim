@@ -3,6 +3,10 @@
 -block title
   Bootstrap Modal Component
 
+-block extrascript
+  script src="/__build__/shared.js"
+  script src='/__build__/modal-component.js'
+
 h1 = title()
 
 #app
