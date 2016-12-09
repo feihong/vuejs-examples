@@ -1,6 +1,8 @@
 from pathlib import Path
 from functools import partial
 import html
+import subprocess
+import signal
 
 from mako.template import Template
 from mako.lookup import TemplateLookup
@@ -48,7 +50,14 @@ def render(tmpl_file, **kwargs):
 
 @task
 def serve(ctx):
+    cmd = 'webpack --progress --colors --watch'
+    webpack_proc = subprocess.Popen(cmd, shell=True)
     app.run(port=8000)
+    # Server is stopped, so stop webpack as well.
+    webpack_proc.send_signal(signal.SIGINT)
+    print('Waiting for webpack to shut down...')
+    webpack_proc.wait()
+    print('Done!')
 
 
 @task
