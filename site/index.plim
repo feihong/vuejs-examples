@@ -1,0 +1,12 @@
+-inherit _base.plim
+
+-block title
+  Vue.js Examples
+
+h1 = title()
+
+hr
+
+ul
+  li
+    a href='modal-component/' Bootstrap modal component

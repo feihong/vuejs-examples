@@ -1,0 +1,21 @@
+/ Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/index.html
+doctype html
+html lang='en'
+  head
+    meta charset='utf-8'
+    meta http-equiv='x-ua-compatible' content='ie=edge'
+    title
+      -block title
+    meta name='description' content=''
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    -block style
+      link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+    -block headlibs
+    -block extrahead
+  body.container
+    = next.body()
+
+    -block script
+      script src='https://code.jquery.com/jquery-3.1.1.min.js'
+      script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+    -block extrascript
