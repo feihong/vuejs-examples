@@ -8,8 +8,8 @@ const app = new Vue({
     port: '22311'
   },
   methods: {
-    open() {
-      console.log('open')
+    save(port) {
+      console.log('Port:', port)
     }
   }
 })

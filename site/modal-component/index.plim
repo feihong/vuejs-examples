@@ -11,6 +11,6 @@
   p
     Local port: {{ port }}
 
-  modal#local-port-modal
+  modal#local-port-modal(@save='save')
 
   button.btn.btn-primary data-toggle='modal' data-target='#local-port-modal' Open modal

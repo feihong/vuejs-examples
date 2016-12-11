@@ -7,23 +7,22 @@
           span &times;
         h4.modal-title Edit local port
       .modal-body
-        .form-group
-          input.form-control(:value='port', ref='portInput')
+        form(@submit.prevent='submit')
+          .form-group(:class="{'has-error': hasError}")
+            input.form-control(v-model.trim.number='port', ref='portInput')
+          p(class='text-danger', v-if='hasError') Port must be a number
       .modal-footer
         button.btn.btn-default(data-dismiss='modal') Cancel
-        button.btn.btn-primary Save
+        button.btn.btn-primary(@click='submit') Save
 </template>
 
 <script>
 export default {
   props: {
-    id: {
-      // type: 'String',
-      required: true
-    }
+    id: {required: true}
   },
   data() {
-    return {port: '15600'}
+    return {port: 15600, hasError: false}
   },
   mounted() {
     $(this.$el).on('shown.bs.modal', () => {
@@ -31,6 +30,17 @@ export default {
       portInput.select()
       portInput.focus()
     })
+  },
+  methods: {
+    submit() {
+      this.hasError = false
+      if (/^\d+$/.test(this.port)) {
+        this.$emit('save', this.port)
+        $(this.$el).modal('hide')
+      } else {
+        this.hasError = true
+      }
+    }
   }
 }
 </script>
