@@ -10,3 +10,5 @@ hr
 ul
   li
     a href='modal-component/' Bootstrap modal component
+  li
+    a href='meetup-calc/' Meetup Calculator

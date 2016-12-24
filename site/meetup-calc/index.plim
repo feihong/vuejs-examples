@@ -1,0 +1,10 @@
+-inherit /_vue.plim
+
+-block title
+  Meetup Calculator
+
+-block extrascript
+  script src="/__build__/shared.js"
+  script src='/__build__/meetup-calc.js'
+
+#app

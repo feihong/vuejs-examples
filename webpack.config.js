@@ -37,23 +37,18 @@ module.exports = {
   },
 
   resolve: {
+    extensions: ['', '.js', '.vue'],
+    fallback: ['./node_modules'],
     alias: {
-      'vue': 'vue/dist/vue.common.js',
-      'vue-router': 'vue/dist/vue-router.common.js',
+      'vue$': 'vue/dist/vue.common.js',
     }
   },
 
-  // Expose __dirname to allow automatically setting basename.
-  // context: __dirname,
-  // node: {
-  //   __dirname: true
-  // },
+  resolveLoader: {
+    fallback: ['./node_modules']
+  },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('shared.js'),
-    // new webpack.DefinePlugin({
-    //   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-    // })
   ]
-
 }
